@@ -434,21 +434,15 @@ enhancement-2/
 ├── Original/                              (Before Enhancement Two - v1)
 │   ├── DatabaseHelper.java                (Version 1, no indexes)
 │   ├── EventsGridActivity.java
-│   ├── MainActivity.java
 │   ├── EventReminderReceiver.java
-│   ├── EventsAdapter.java
-│   ├── SmsPermissionActivity.java
-│   ├── AndroidManifest.xml
+│   ├── activity_events_grid.xml
 │   └── (other supporting files)
 │
 ├── Enhanced/                              (After Enhancement Two - v3)
 │   ├── DatabaseHelper.java                (Version 3 with indexes)
 │   ├── EventsGridActivity.java
-│   ├── MainActivity.java
 │   ├── EventReminderReceiver.java
-│   ├── EventsAdapter.java
-│   ├── SmsPermissionActivity.java
-│   ├── AndroidManifest.xml
+│   ├── activity_events_grid.xml
 │   └── (other supporting files)
 │
 ├── Milestone_4-2_Enhancement_Two_Sunny.docx  (Official narrative)
