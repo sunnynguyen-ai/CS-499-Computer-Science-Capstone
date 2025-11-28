@@ -9,13 +9,14 @@ This folder contains the comprehensive code review of the Event Tracker Android 
 ## Video Recording
 
 **Access Code Review Video:**  
-[Brightspace Submission Link](https://learn.snhu.edu/d2l/le/dropbox/2074363/3919904/DownloadSubmissionFile?fid=225970781&sid=58884450)
+[Watch on YouTube](https://www.youtube.com/watch?v=39Q9laJJUco) (Unlisted)
 
 **Duration:** 7-10 minutes  
 **Submitted:** Module 2 (November 3-9, 2025)  
-**Format:** MP4 video walkthrough
+**Format:** MP4 video walkthrough  
+**Platform:** YouTube (Unlisted - accessible via link only)
 
-> **Note:** This video is hosted on Brightspace (SNHU's learning management system) and requires institutional login to access. It was submitted as part of Milestone 2-2 coursework.
+> **Note:** This video is set to "Unlisted" on YouTube, meaning it is accessible to anyone with the link but is not searchable on YouTube or visible on public channel listings. No login required to view.
 
 ---
 
@@ -140,12 +141,13 @@ code-review/
 ## How to Use
 
 **For Course Submission:**
-- Video link provided for instructor access via Brightspace
+- Video accessible via YouTube link (no login required)
 - Comprehensive written analysis in index.md
 - Demonstrates systematic code analysis methodology
 
 **For Portfolio Presentation:**
-- Written summary accessible without Brightspace login
+- Video accessible to anyone with link
+- Written summary provides complete context
 - Clear identification of problems and solutions
 - Professional documentation of findings
 
@@ -153,6 +155,7 @@ code-review/
 - Shows ability to analyze existing codebases
 - Demonstrates critical thinking and problem identification
 - Illustrates planning and systematic improvement approach
+- Video provides engaging presentation of analysis
 
 ---
 
