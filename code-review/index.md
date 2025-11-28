@@ -17,7 +17,7 @@ The code review serves as the foundation for all enhancement work, establishing 
 
 ## Code Review Video
 
-**Video Recording:** [Access via Brightspace Submission](https://learn.snhu.edu/d2l/le/dropbox/2074363/3919904/DownloadSubmissionFile?fid=225970781&sid=58884450)
+**Video Recording:** [Watch on YouTube](https://www.youtube.com/watch?v=39Q9laJJUco) (Unlisted - accessible via link)
 
 **Duration:** 7-10 minutes  
 **Date Recorded:** November 2025  
