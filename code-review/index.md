@@ -17,13 +17,14 @@ The code review serves as the foundation for all enhancement work, establishing 
 
 ## Code Review Video
 
-**Video Recording:** [Watch on YouTube](https://www.youtube.com/watch?v=39Q9laJJUco) (Unlisted - accessible via link)
+**Video Recording:** [Watch on YouTube](https://www.youtube.com/watch?v=39Q9laJJUco) (Unlisted - accessible via link only)
 
 **Duration:** 7-10 minutes  
 **Date Recorded:** November 2025  
-**Submitted:** Module 2 (Milestone 2-2)
+**Submitted:** Module 2 (Milestone 2-2)  
+**Platform:** YouTube (Unlisted)
 
-> **Note for Portfolio Visitors:** This video is hosted on Brightspace (SNHU's learning management system) and requires institutional login access. The video was submitted for Module 2 coursework evaluation. A comprehensive written summary of findings is provided below.
+> **Note for Portfolio Visitors:** This video is hosted on YouTube with "Unlisted" visibility, meaning it is accessible to anyone with the link but is not searchable on YouTube or visible on public channel listings. No login required. A comprehensive written summary of findings is also provided below.
 
 > **For Employers/Recruiters:** If you would like to view the code review video, please contact me and I can provide alternative access or a detailed written analysis.
 
