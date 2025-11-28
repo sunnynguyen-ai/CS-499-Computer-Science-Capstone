@@ -18,7 +18,7 @@ The capstone project transforms an Android Event Tracker application from a basi
 
 **Selected Artifact:** Event Tracker Android Application  
 **Original Source:** CS-360 Mobile Architecture & Programming  
-**Development Period:** January 2025 - March 2025  
+**Development Period:** October 27, 2025 - December 21, 2025  
 **Technologies:** Java, Android SDK, SQLite, REST APIs, HTTP networking
 
 ### Evolution Across Three Enhancements
@@ -356,34 +356,42 @@ An overview of how the three enhancements work together to demonstrate comprehen
 
 ## 📈 Project Timeline
 
-**Module 1-2 (January 2025):**
-- Artifact selection and code review
+**Module 1 (October 27 - November 2, 2025):**
+- Artifact selection from previous coursework
 - Initial enhancement planning
 
-**Module 3 (February 2025):**
+**Module 2 (November 3-9, 2025):**
+- Code review video creation
+- Comprehensive analysis of original artifact
+- Identification of improvement areas
+
+**Module 3 (November 10-16, 2025):**
 - Enhancement One: Recurring events implementation
 - Database schema evolution (v1 → v2)
 - Received MAX SCORE on Milestone 3-2
 
-**Module 4 (February 2025):**
+**Module 4 (November 17-23, 2025):**
 - Enhancement Two: Database indexing and optimization
 - Performance improvements (v2 → v3)
 - Received MAX SCORE on Milestone 4-2
 
-**Module 5 (February-March 2025):**
+**Module 5 (November 24-30, 2025):**
 - Enhancement Three: Cloud synchronization
 - REST API integration (v3 → v4)
 - Milestone 5-2 submitted
 
-**Module 6 (March 2025):**
+**Module 6 (December 1-7, 2025):**
 - Documentation enhancement and polish
 - GitHub Pages setup and publication
 - Portfolio organization and presentation
 
-**Module 7 (March 2025):**
+**Module 7 (December 8-14, 2025):**
 - Professional self-assessment completion
 - Final ePortfolio polish
-- Capstone submission
+
+**Module 8 (December 15-21, 2025):**
+- Final capstone submission
+- Portfolio presentation
 
 ---
 
@@ -468,6 +476,6 @@ I would like to thank:
 
 ---
 
-*Last Updated: March 2025*  
+*Last Updated: November 2025*  
 *Southern New Hampshire University*  
 *CS-499 Computer Science Capstone*
