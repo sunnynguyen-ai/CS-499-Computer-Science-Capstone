@@ -306,7 +306,6 @@ All three enhancements work together in the final application.
 **Student:** Sunny Nguyen  
 **Course:** CS-499 Computer Science Capstone  
 **Institution:** Southern New Hampshire University  
-**Semester:** 2024
 
 ---
 
