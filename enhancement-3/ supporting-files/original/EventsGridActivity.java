@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -34,6 +36,7 @@ public class EventsGridActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private EditText etName, etDate, etTime;
+    private Spinner spRecurrence;
     private Button btnAdd;
 
     private DatabaseHelper db;
@@ -61,7 +64,23 @@ public class EventsGridActivity extends AppCompatActivity {
         etName = findViewById(R.id.editTextEventName);
         etDate = findViewById(R.id.editTextEventDate);
         etTime = findViewById(R.id.editTextEventTime);
+        spRecurrence = findViewById(R.id.spinnerRecurrence);
         btnAdd = findViewById(R.id.buttonAddEvent);
+
+        // Setup recurrence spinner
+        String[] recurrenceOptions = new String[]{
+                "Does not repeat",
+                "Daily",
+                "Weekly",
+                "Monthly"
+        };
+        ArrayAdapter<String> recurrenceAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_item,
+                recurrenceOptions
+        );
+        recurrenceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spRecurrence.setAdapter(recurrenceAdapter);
 
         adapter = new EventsAdapter(events, e -> {
             db.deleteEvent(e.id);
@@ -101,6 +120,24 @@ public class EventsGridActivity extends AppCompatActivity {
             return;
         }
 
+        // Map spinner selection to recurrence constants
+        String recurrenceType;
+        int pos = spRecurrence.getSelectedItemPosition();
+        switch (pos) {
+            case 1:
+                recurrenceType = DatabaseHelper.RECURRENCE_DAILY;
+                break;
+            case 2:
+                recurrenceType = DatabaseHelper.RECURRENCE_WEEKLY;
+                break;
+            case 3:
+                recurrenceType = DatabaseHelper.RECURRENCE_MONTHLY;
+                break;
+            default:
+                recurrenceType = DatabaseHelper.RECURRENCE_NONE;
+                break;
+        }
+
         Date d, t;
         try {
             d = DF.parse(date);
@@ -110,17 +147,18 @@ public class EventsGridActivity extends AppCompatActivity {
             return;
         }
 
-        long id = db.insertEvent(name, date, time, "");
-        Event ev = new Event((int) id, name, date, time, "");
+        long id = db.insertEvent(name, date, time, "", recurrenceType);
+        Event ev = new Event((int) id, name, date, time, "", recurrenceType);
         events.add(ev);
         adapter.notifyItemInserted(events.size() - 1);
 
         Calendar when = merge(d, t);
-        scheduleAlarm(id, name, when);
+        scheduleAlarm(id, name, when, recurrenceType);
 
         etName.setText("");
         etDate.setText("");
         etTime.setText("");
+        spRecurrence.setSelection(0);
         Toast.makeText(this, "Event added", Toast.LENGTH_SHORT).show();
     }
 
@@ -139,13 +177,14 @@ public class EventsGridActivity extends AppCompatActivity {
     /**
      * Schedules a reminder for the event.
      * - API 31+ (Android 12+): use INEXACT alarm to avoid SCHEDULE_EXACT_ALARM requirement.
-     * - API 23–30: use setExactAndAllowWhileIdle.
+     * - API 23â€“30: use setExactAndAllowWhileIdle.
      * - API <23: use setExact.
      */
-    private void scheduleAlarm(long id, String name, Calendar when) {
+    private void scheduleAlarm(long id, String name, Calendar when, String recurrenceType) {
         Intent i = new Intent(this, EventReminderReceiver.class);
         i.putExtra("name", name);
         i.putExtra("time", TF.format(when.getTime()));
+        i.putExtra("recurrence_type", recurrenceType);
 
         PendingIntent pi = PendingIntent.getBroadcast(
                 this, (int) id, i,
@@ -205,6 +244,7 @@ public class EventsGridActivity extends AppCompatActivity {
             Intent i = new Intent(this, EventReminderReceiver.class);
             i.putExtra("name", e.name);
             i.putExtra("time", e.time);
+            i.putExtra("recurrence_type", e.recurrenceType);
             sendBroadcast(i);
         }
         Toast.makeText(this, "Today's alerts sent", Toast.LENGTH_SHORT).show();
@@ -214,8 +254,17 @@ public class EventsGridActivity extends AppCompatActivity {
     public static class Event {
         public int id;
         public String name, date, time, desc;
-        public Event(int id, String name, String date, String time, String desc) {
-            this.id = id; this.name = name; this.date = date; this.time = time; this.desc = desc;
+        // New: recurrence type for this event
+        public String recurrenceType;
+
+        public Event(int id, String name, String date, String time,
+                     String desc, String recurrenceType) {
+            this.id = id;
+            this.name = name;
+            this.date = date;
+            this.time = time;
+            this.desc = desc;
+            this.recurrenceType = recurrenceType;
         }
     }
 }
